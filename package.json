@@ -1,0 +1,21 @@
+{
+  "name": "yui",
+  "module": "index.js",
+  "type": "module",
+  "author": "Giovanni",
+  "repository": "git@github.com:giovankes/yui.git",
+  "scripts": {
+    "server": "bun run server.js",
+    "start": "bun run index.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.5",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "expres": "^0.0.5",
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.0.3",
+    "ws": "^8.16.0"
+  }
+}
