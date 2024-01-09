@@ -1,16 +1,25 @@
 import 'dotenv/config';
 import Wrapper from './client.js';
 import WebSocket from 'ws';
+import fs from 'fs';
 import { settings } from './config/config.json' assert { type: 'json' };
 import { format_message } from './utils/format.js';
 const { token } = process.env;
 const self = new Wrapper(token, settings);
+
 self.on('ready', () => {
+  fs.readFileSync('./ascii.txt')
+    .toString()
+    .split('\n')
+    .forEach((line) => {
+      console.log(line);
+    });
+  console.log('MADE BY GIOVANNI');
   console.log(
-    '\x1b[42m',
-    `Logged in as ${self.client.user.username}#${self.client.user.discriminator}`,
-    '\x1b[0m'
+    `Logged in as ${self.client.user.username}#${self.client.user.discriminator}`
   );
+
+  console.info('scraping started');
 });
 
 // const ws = new WebSocket(process.env.ws);
@@ -27,4 +36,4 @@ self.on('message_create', (m) => {
   }
 });
 
-console.info('scraping started');
+console.log('booting up...');
